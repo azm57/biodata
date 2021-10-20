@@ -1,1 +1,1 @@
-# biodata
+# detailed biodata
