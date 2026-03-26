@@ -1,16 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>My Hobbies</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <h3>My Hobbies</h3>
-    <ol>
-      <li>Netflix</li>
-      <li>Long Drives</li>
-      <li>Beach and Nature Person</li>
-    </ol>
-  </body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azeem's Hobbies</title>
+    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+    <style>
+        :root {
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --primary-text: #2d3436;
+            --secondary-text: #636e72;
+            --accent-color: #0984e3;
+            --border-color: #eeeeee;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary-text: #e0e0e0;
+            --secondary-text: #b0b0b0;
+            --accent-color: #74b9ff;
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: var(--secondary-text); margin-bottom: 40px; }
+
+        /* Hobbies Grid */
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .
