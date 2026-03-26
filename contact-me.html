@@ -1,25 +1,202 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <h1>My Contact Details</h1>
-    <p>Mobile Num: </p>
-    <p>+91 - 9640758857</p>
-    <p>mdazeem5790@gmail.com</p>
-    <hr>
-    <input type="date">
-    <form action="mailto:mdazeem5790@gmail.com" method="post" enctype="text/plain">
-      <label>Your Name:</label>
-      <input type="text" name="yourName" value=""><br>
-      <label>Your Email:</label>
-      <input type="email" name="yourEmail" value=""><br>
-      <label>Your Message:</label><br>
-      <textarea name="yourMessage" rows="10" cols="30"></textarea><br>
-      <input type="submit" name="">
-    </form>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Azeem Mohammad</title>
+    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+    <style>
+        :root {
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --primary-text: #2d3436;
+            --secondary-text: #636e72;
+            --accent-color: #0984e3;
+            --border-color: #eeeeee;
+            --input-bg: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary-text: #e0e0e0;
+            --secondary-text: #b0b0b0;
+            --accent-color: #74b9ff;
+            --border-color: #333333;
+            --input-bg: #2d3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        h1 { margin-bottom: 20px; font-size: 2rem; }
+        
+        /* Contact Details Section */
+        .contact-info {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .label-text {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Form Styling */
+        .form-group { margin-bottom: 20px; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--input-bg);
+            color: var(--primary-text);
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-submit:hover { opacity: 0.9; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="themeBtn">🌙 Mode</button>
+
+    <div class="contact-card">
+        <h1>Contact Details</h1>
+        
+        <div class="contact-info">
+            <p class="label-text">Phone</p>
+            <p>+91 - 9640758857</p>
+            <p class="label-text" style="margin-top: 15px;">Email</p>
+            <p>mdazeem5790@gmail.com</p>
+        </div>
+
+        <form action="mailto:mdazeem5790@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label>Submission Date</label>
+                <input type="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="yourName" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" name="yourEmail" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea name="yourMessage" rows="6" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Email</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Back to Profile</a>
+    </div>
+
+    <script>
+        // Shared Theme Logic
+        const btn = document.getElementById("themeBtn");
+        const currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+            btn.textContent = "☀️ Light";
+        }
+
+        btn.addEventListener("click", () => {
+            let theme = document.documentElement.getAttribute("data-theme");
+            if (theme === "dark") {
+                document.documentElement.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+                btn.textContent = "🌙 Dark";
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+                btn.textContent = "☀️ Light";
+            }
+        });
+    </script>
+</body>
 </html>
