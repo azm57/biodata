@@ -46,12 +46,12 @@
             cursor: pointer;
             font-weight: bold;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
 
         h1 { font-size: 2.5rem; margin-bottom: 10px; }
         .subtitle { color: var(--secondary-text); margin-bottom: 40px; }
 
-        /* Hobbies Grid */
         .hobbies-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -73,4 +73,50 @@
             border-bottom: 4px solid var(--accent-color);
         }
 
-        .
+        .hobby-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
+        .hobby-title { font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="themeBtn">Toggle Mode</button>
+
+    <h1>Azeem's Hobbies</h1>
+    <p class="subtitle">Exploring the things I love to do in my free time.</p>
+
+    <div class="hobbies-container">
+        <div class="hobby-card">
+            <span class="hobby-icon">📸</span>
+            <span class="hobby-title">Photography</span>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-icon">💻</span>
+            <span class="hobby-title">Coding</span>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-icon">🏔️</span>
+            <span class="hobby-title">Hiking</span>
+        </div>
+        <div class="hobby-card">
+            <span class="hobby-icon">📚</span>
+            <span class="hobby-title">Reading</span>
+        </div>
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        
+        // Check for saved user preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
