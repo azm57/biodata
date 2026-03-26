@@ -1,60 +1,183 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>Azeem's Personal Site</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azeem Mohammad | Tech Lead</title>
     <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
-  </head>
+    <style>
+        /* Color Variables for easy switching */
+        :root {
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --primary-text: #2d3436;
+            --secondary-text: #636e72;
+            --accent-color: #0984e3;
+            --border-color: #eeeeee;
+            --hover-color: #f1f7ff;
+        }
 
-  <body>
-    <table cellspacing="20">
-      <tr>
-        <td><img src="images/QFe6dU2q_400x400.png" alt="Azeem's profile picture"></td>
-        <td><h1>Azeem Mohammad</h1>
-        <p><em><strong>Tech Lead, Coforge</strong>.</em></p>
-        <p>I am SDET and front end Developer. I ❤️ tea and like to learn new things.</p></td>
-      </tr>
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary-text: #e0e0e0;
+            --secondary-text: #b0b0b0;
+            --accent-color: #74b9ff;
+            --border-color: #333333;
+            --hover-color: #2d3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-text);
+            background-color: var(--bg-color);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; }
+        .tagline { font-weight: bold; color: var(--accent-color); font-size: 1.2rem; margin: 5px 0; }
+
+        .bio-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th { text-align: left; color: var(--secondary-text); border-bottom: 2px solid var(--border-color); padding: 12px; }
+        td { padding: 15px 12px; border-bottom: 1px solid var(--border-color); }
+        tr:hover { background-color: var(--hover-color); }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: var(--accent-color);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        @media (max-width: 600px) {
+            .profile-header { flex-direction: column; text-align: center; }
+            .theme-toggle { top: 10px; right: 10px; padding: 8px 12px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="themeBtn">🌙 Mode</button>
+
+    <header class="profile-header">
+        <img src="images/QFe6dU2q_400x400.png" alt="Azeem Mohammad" class="profile-img">
+        <div>
+            <h1>Azeem Mohammad</h1>
+            <p class="tagline">Tech Lead at Coforge</p>
+            <p>SDET & Front-end Developer | Tea Enthusiast ☕</p>
+        </div>
+    </header>
+
+    <section class="bio-card">
+        <p><strong>Professional Summary:</strong> Post Graduate from JNTU Main Campus with Distinction. I am a meritorious professional currently leading technical teams at Coforge. I pride myself on balancing a high-growth career with a grounded, healthy lifestyle.</p>
+        <p>I value fitness, travel, and "Deen & Duniya." Whether it's exploring greenery and beaches or staying updated with the latest tech, I am always driven by a passion for learning.</p>
+    </section>
+
+    <h3>Professional Journey</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Role & Organization</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>2023 – Present</td><td><strong>Tech Lead</strong>, Coforge</td></tr>
+            <tr><td>2021 – 2023</td><td>Senior Software Engineer, Altimetrik India</td></tr>
+            <tr><td>2018 – 2021</td><td>Senior Software Engineer, Arcesium</td></tr>
+            <tr><td>2017 – 2018</td><td>Software Engineer, Infosys</td></tr>
+            <tr><td>2014 – 2017</td><td>Associate Software Engineer, EPAM Systems</td></tr>
+        </tbody>
     </table>
-    <hr>
-    <p style="font-family:Helvetica, sans-serif;">Hello,<br>I'm a Post Graduate - Graduated from JNTU Main Campus with Distinction, Currently working in a fast-growing software firm, with 6 figure salary.
-meritorious student from school, excelled in studies.<br>Belongs Sunni Muslim family, who balances both deen and duniya.<br>Believes in healthy lifestyle and fitness.I like to travel, occasional cook, watching good content
-on Netflix/Prime etc <br>also enjoy greenery, beaches, to learn new things.<br>
-Looking for families with similar interests and background.</p>
-<hr>
-    <h3>Work Experience</h3>
-    <table cellspacing="10">
-      <thead>
-        <tr>
-          <th>Dates</th>
-          <th>Work</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2014-2017</td>
-          <td>Assosiate SW Engineer, EPAM Systems, Hyderabad</td>
-        </tr>
-        <tr>
-          <td>2017-2018</td>
-          <td>SW Engineer, Infosys</td>
-        </tr>
-        <tr>
-          <td>2018-2021</td>
-          <td>Senior SW Engineer, Arcesium</td>
-        </tr>
-		<tr>
-          <td>2021-2023</td>
-          <td>Senior SW Engineer, Altimetrik India</td>
-        </tr>
-		<tr>
-          <td>2023-</td>
-          <td>Tech Lead, Coforge</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <a href="hobbies.html">My Hobbies</a>
-    <a href="contact-me.html">Contact Me</a>
-  </body>
+
+    <div class="btn-container">
+        <a href="hobbies.html" class="btn">View Hobbies</a>
+        <a href="contact-me.html" class="btn">Get in Touch</a>
+    </div>
+
+    <script>
+        const btn = document.getElementById("themeBtn");
+        const currentTheme = localStorage.getItem("theme");
+
+        // Check for saved user preference
+        if (currentTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+            btn.textContent = "☀️ Light";
+        }
+
+        btn.addEventListener("click", () => {
+            let theme = document.documentElement.getAttribute("data-theme");
+            if (theme === "dark") {
+                document.documentElement.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+                btn.textContent = "🌙 Dark";
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+                btn.textContent = "☀️ Light";
+            }
+        });
+    </script>
+</body>
 </html>
